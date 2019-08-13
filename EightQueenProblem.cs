@@ -5,44 +5,24 @@
 
     public class EightQueenProblem
     {
-        private int queenMark = 1;
-        private int queenFieldsMark = 2;
-        private int defaultBoardValue = 0;
+        private int size = 8;
 
-        int[,] board;
+        private HashSet<int> attackedRows;
+        private HashSet<int> attackedCols;
+        private int[,] board;
 
         public EightQueenProblem()
         {
-            board = new int[,] {
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0 },
-            };
+            this.attackedRows = new HashSet<int>();
+            this.attackedCols = new HashSet<int>();
+            this.board = new int[size, size];
         }
 
         public void Solve(int row)
         {
-            if (row == 8)
+            if (row == size)
             {
-                int rowLength = this.board.GetLength(0);
-                int colLength = this.board.GetLength(1);
-
-                for (int i = 0; i < rowLength; i++)
-                {
-                    for (int j = 0; j < colLength; j++)
-                    {
-                        Console.Write(string.Format("{0} ", this.board[i, j]));
-                    }
-
-                    Console.Write(Environment.NewLine + Environment.NewLine);
-                }
-
-                Console.ReadLine();
+                PrintSolution();
             }
 
             else
@@ -59,87 +39,131 @@
             }
         }
 
+        private void PrintSolution()
+        {
+            int rowLength = this.board.GetLength(0);
+            int colLength = this.board.GetLength(1);
+
+            for (int row = 0; row < rowLength; row++)
+            {
+                for (int col = 0; col < colLength; col++)
+                {
+                    if (this.board[row, col] == 1)
+                    {
+                        Console.Write("* ");
+                    }
+
+                    else
+                    {
+                        Console.Write("- ");
+                    }
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+        }
+
         private bool CanPlaceQueen(int row, int col)
         {
-            if (this.board[row, col] == 0)
+            if (attackedRows.Contains(row))
             {
-                this.board[row, col] = queenMark;
-                return true;
+                return false;
             }
 
-            return false;
+            if (attackedCols.Contains(col))
+            {
+                return false;
+            }
+
+            //left up diagonal
+            for (int i = 1; i < this.size; i++)
+            {
+                int currentRow = row - i;
+                int currentCol = col - i;
+
+                if (currentRow < 0 || currentRow >= this.size || currentCol < 0 || currentCol >= this.size)
+                {
+                    break;
+                }
+
+                //queen here
+                if (this.board[currentRow, currentCol] == 1)
+                {
+                    return false;
+                }
+            }
+
+            //right up diagonal
+            for (int i = 1; i < this.size; i++)
+            {
+                int currentRow = row - i;
+                int currentCol = col + i;
+
+                if (currentRow < 0 || currentRow >= this.size || currentCol < 0 || currentCol >= this.size)
+                {
+                    break;
+                }
+
+                //queen here
+                if (this.board[currentRow, currentCol] == 1)
+                {
+                    return false;
+                }
+            }
+
+            //left down diagonal
+            for (int i = 1; i < this.size; i++)
+            {
+                int currentRow = row + i;
+                int currentCol = col - i;
+
+                if (currentRow < 0 || currentRow >= this.size || currentCol < 0 || currentCol >= this.size)
+                {
+                    break;
+                }
+
+                //queen here
+                if (this.board[currentRow, currentCol] == 1)
+                {
+                    return false;
+                }
+            }
+
+            //right down diagonal
+            for (int i = 1; i < this.size; i++)
+            {
+                int currentRow = row + i;
+                int currentCol = col + i;
+
+                if (currentRow < 0 || currentRow >= this.size || currentCol < 0 || currentCol >= this.size)
+                {
+                    break;
+                }
+
+                //queen here
+                if (this.board[currentRow, currentCol] == 1)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
-        private void MarkAttackedPositions(int givenRow, int givenCol)
+        private void MarkAttackedPositions(int row, int col)
         {
-            int givenRowCopy = givenRow;
-            int givenColCopy = givenCol;
-
-            for (int col = givenCol + 1; col < this.board.GetLength(1); col++) // right
-            {
-                this.board[givenRow, col] = queenFieldsMark;
-            }
-
-            for (int row = givenRow + 1; row < this.board.GetLength(0); row++) // down
-            {
-                this.board[row, givenCol] = queenFieldsMark;
-            }
-
-            for (int col = givenCol - 1; col >= 0; col--) // left
-            {
-                this.board[givenRow, col] = queenFieldsMark;
-            }
-
-            for (int row = givenRow - 1 ; row >= 0; row--) // up
-            {
-                this.board[row, givenCol] = queenFieldsMark;
-            }
-
-            while (givenRowCopy < 7 && givenColCopy < 7) // bootom right diagonal
-            {
-                givenRowCopy++;
-                givenColCopy++;
-
-                this.board[givenRowCopy, givenColCopy] = queenFieldsMark;
-            }
-
-            givenRowCopy = givenRow;
-            givenColCopy = givenCol;
-
-            while (givenRowCopy < 7 && givenColCopy > 0) // bootom left diagonal
-            {
-                givenRowCopy++;
-                givenColCopy--;
-
-                this.board[givenRowCopy, givenColCopy] = queenFieldsMark;
-            }
-
-            givenRowCopy = givenRow;
-            givenColCopy = givenCol;
-
-            while (givenRowCopy > 0 && givenColCopy > 0) // top left diagonal
-            {
-                givenRowCopy--;
-                givenColCopy--;
-
-                this.board[givenRowCopy, givenColCopy] = queenFieldsMark;
-            }
-
-            givenRowCopy = givenRow;
-            givenColCopy = givenCol;
-
-            while (givenRowCopy > 0 && givenColCopy < 7) // top right diagonal
-            {
-                givenRowCopy--;
-                givenColCopy++;
-
-                this.board[givenRowCopy, givenColCopy] = queenFieldsMark;
-            }
+            this.board[row, col] = 1;
+            attackedRows.Add(row);
+            attackedCols.Add(col);
         }
 
-        private void UnMarkAttackedPositions(int givenRow, int givenCol)
+        private void UnMarkAttackedPositions(int row, int col)
         {
-           //
+            board[row, col] = 0;
+            attackedRows.Remove(row);
+            attackedCols.Remove(col);
         }
     }
 }
