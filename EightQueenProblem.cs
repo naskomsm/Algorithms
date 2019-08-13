@@ -9,12 +9,18 @@
 
         private HashSet<int> attackedRows;
         private HashSet<int> attackedCols;
+        private HashSet<int> attackedRightDiagonals;
+        private HashSet<int> attackedLeftDiagonals;
+
         private int[,] board;
 
         public EightQueenProblem()
         {
             this.attackedRows = new HashSet<int>();
             this.attackedCols = new HashSet<int>();
+            this.attackedRightDiagonals = new HashSet<int>();
+            this.attackedLeftDiagonals = new HashSet<int>();
+
             this.board = new int[size, size];
         }
 
@@ -77,76 +83,14 @@
                 return false;
             }
 
-            //left up diagonal
-            for (int i = 1; i < this.size; i++)
+            if(attackedLeftDiagonals.Contains(col - row))
             {
-                int currentRow = row - i;
-                int currentCol = col - i;
-
-                if (currentRow < 0 || currentRow >= this.size || currentCol < 0 || currentCol >= this.size)
-                {
-                    break;
-                }
-
-                //queen here
-                if (this.board[currentRow, currentCol] == 1)
-                {
-                    return false;
-                }
+                return false;
             }
 
-            //right up diagonal
-            for (int i = 1; i < this.size; i++)
+            if (attackedRightDiagonals.Contains(row + col))
             {
-                int currentRow = row - i;
-                int currentCol = col + i;
-
-                if (currentRow < 0 || currentRow >= this.size || currentCol < 0 || currentCol >= this.size)
-                {
-                    break;
-                }
-
-                //queen here
-                if (this.board[currentRow, currentCol] == 1)
-                {
-                    return false;
-                }
-            }
-
-            //left down diagonal
-            for (int i = 1; i < this.size; i++)
-            {
-                int currentRow = row + i;
-                int currentCol = col - i;
-
-                if (currentRow < 0 || currentRow >= this.size || currentCol < 0 || currentCol >= this.size)
-                {
-                    break;
-                }
-
-                //queen here
-                if (this.board[currentRow, currentCol] == 1)
-                {
-                    return false;
-                }
-            }
-
-            //right down diagonal
-            for (int i = 1; i < this.size; i++)
-            {
-                int currentRow = row + i;
-                int currentCol = col + i;
-
-                if (currentRow < 0 || currentRow >= this.size || currentCol < 0 || currentCol >= this.size)
-                {
-                    break;
-                }
-
-                //queen here
-                if (this.board[currentRow, currentCol] == 1)
-                {
-                    return false;
-                }
+                return false;
             }
 
             return true;
@@ -157,6 +101,8 @@
             this.board[row, col] = 1;
             attackedRows.Add(row);
             attackedCols.Add(col);
+            attackedLeftDiagonals.Add(col - row);
+            attackedRightDiagonals.Add(row + col);
         }
 
         private void UnMarkAttackedPositions(int row, int col)
@@ -164,6 +110,8 @@
             board[row, col] = 0;
             attackedRows.Remove(row);
             attackedCols.Remove(col);
+            attackedLeftDiagonals.Remove(col - row);
+            attackedRightDiagonals.Remove(row + col);
         }
     }
 }
