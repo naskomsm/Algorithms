@@ -4,8 +4,12 @@
     {
         public static void Main()
         {
-            EightQueenProblem problem = new EightQueenProblem();
-            problem.Solve(0);
+            Labyrinth labyrinth = new Labyrinth(3, 3);
+            // you need to give the labyrinth - example --->
+            // ---
+            // -*-
+            // --e
+            labyrinth.Solve(0, 0, 'S');
         }
     }
 }       
