@@ -25,10 +25,8 @@
 
             else
             {
-
                 for (int i = 1; i <= 3; i++)
                 {
-
                     var currentRowNumbers = sudoku[initialRow];
                     for (int column = initialCol; column < currentRowNumbers.Length; column++)
                     {

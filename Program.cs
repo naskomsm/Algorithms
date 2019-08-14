@@ -4,12 +4,15 @@
     {
         public static void Main()
         {
-            Labyrinth labyrinth = new Labyrinth(3, 3);
-            // you need to give the labyrinth - example --->
-            // ---
-            // -*-
-            // --e
-            labyrinth.Solve(0, 0, 'S');
+            //Labyrinth labyrinth = new Labyrinth(3, 3);
+            //// you need to give the labyrinth - example --->
+            //// ---
+            //// -*-
+            //// --e
+            //labyrinth.Solve(0, 0, 'S');
+
+            EightQueenProblem problem = new EightQueenProblem();
+            problem.Solve(0);
         }
     }
 }       
