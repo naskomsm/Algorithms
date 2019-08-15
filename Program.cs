@@ -15,18 +15,24 @@
             //// --e
             //labyrinth.Solve(0, 0, 'S');
 
-            MySelectionSort selectionSort = new MySelectionSort();
-            Console.WriteLine(selectionSort.SortNumbers(new List<int>() { 25, 10, 5, 7, 1, 2, 150, 256, 11, 23, 57, 69, 12 }));
+            //MySelectionSort selectionSort = new MySelectionSort();
+            //Console.WriteLine(selectionSort.SortNumbers(new List<int>() { 25, 10, 5, 7, 1, 2, 150, 256, 11, 23, 57, 69, 12 }));
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            MyBubbleSort bubbleSort = new MyBubbleSort();
-            Console.WriteLine(bubbleSort.SortNumbers(new List<int>() { 25, 10, 5, 7, 1, 2, 150, 256, 11, 23, 57, 69, 12 }));
+            //MyBubbleSort bubbleSort = new MyBubbleSort();
+            //Console.WriteLine(bubbleSort.SortNumbers(new List<int>() { 25, 10, 5, 7, 1, 2, 150, 256, 11, 23, 57, 69, 12 }));
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            MyInsertionSort insertionSort = new MyInsertionSort();
-            Console.WriteLine(insertionSort.SortNumbers(new List<int>() { 25, 10, 5, 7, 1, 2, 150, 256, 11, 23, 57, 69, 12 }));
+            //MyInsertionSort insertionSort = new MyInsertionSort();
+            //Console.WriteLine(insertionSort.SortNumbers(new List<int>() { 25, 10, 5, 7, 1, 2, 150, 256, 11, 23, 57, 69, 12 }));
+
+            //Console.WriteLine();
+
+            MyMergeSort mergeSort = new MyMergeSort();
+            var sorted = mergeSort.SortNumbers(new List<int>() { 38, 27, 43, 3, 9, 82, 10 });
+            Console.WriteLine(string.Join(" ", sorted));
         }
     }
 }
