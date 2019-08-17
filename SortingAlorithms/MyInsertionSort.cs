@@ -14,7 +14,7 @@
                 while (j >= 0 && collection[j] > currentNumber)
                 {
                     collection[j + 1] = collection[j];
-                    j = j - 1;
+                    j--;
                 }
 
                 collection[j + 1] = currentNumber;

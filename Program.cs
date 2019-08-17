@@ -30,9 +30,9 @@
 
             //Console.WriteLine();
 
-            MyMergeSort mergeSort = new MyMergeSort();
-            var sorted = mergeSort.SortNumbers(new List<int>() { 38, 27, 43, 3, 9, 82, 10 });
-            Console.WriteLine(string.Join(" ", sorted));
+            //MyMergeSort mergeSort = new MyMergeSort();
+            //var sorted = mergeSort.SortNumbers(new List<int>() { 3, 5, 1, 2 });
+            //Console.WriteLine(string.Join(" ", sorted));
         }
     }
 }
