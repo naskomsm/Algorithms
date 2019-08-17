@@ -31,8 +31,13 @@
             //Console.WriteLine();
 
             //MyMergeSort mergeSort = new MyMergeSort();
-            //var sorted = mergeSort.SortNumbers(new List<int>() { 3, 5, 1, 2 });
+            //var sorted = mergeSort.SortNumbers(new List<int>() { 25, 10, 5, 7, 1, 2, 150, 256, 11, 23, 57, 69, 12 });
             //Console.WriteLine(string.Join(" ", sorted));
+
+            //Console.WriteLine();
+
+            MyQuickSort quickSort = new MyQuickSort();
+            Console.WriteLine(quickSort.SortNumbers(new List<int>() { 3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48 }));
         }
     }
 }
