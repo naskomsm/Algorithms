@@ -1,6 +1,6 @@
 ﻿namespace Algorithms_and_data_structure
 {
-    using Algorithms_and_data_structure.CombinationAlorithms;
+    using Algorithms_and_data_structure.CombinationAlgorithms;
     using Algorithms_and_data_structure.SearchingAlgorithms;
     using Algorithms_and_data_structure.SortingAlorithms;
     using System;
@@ -49,10 +49,13 @@
             //var searchedNumber = searcher.Find(new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }, 8, 0, 9);
             //Console.WriteLine(searchedNumber);
 
-            Permutation permutation = new Permutation();
-            permutation.Permute(0, new string[4] { "A", "B", "C", "D" });
-            long possibleWaysCount = permutation.FindPossibleWaysCount(4);
-            Console.WriteLine($"Possible permutations: {possibleWaysCount}");
+            //Permutation permutation = new Permutation();
+            //permutation.Permute(0, new string[3] { "A", "B", "C" });
+            //long possibleWaysCount = permutation.FindPossibleWaysCountWithoutRepetition(3);
+            //Console.WriteLine($"Possible permutations: {possibleWaysCount}");
+
+            Variation variation = new Variation(2);
+            variation.Variate(0, new string[3] { "A", "B", "C" });
         }
     }
 }

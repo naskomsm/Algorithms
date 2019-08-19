@@ -1,6 +1,7 @@
 ﻿namespace Algorithms_and_data_structure.CombinationAlgorithms
 {
     using System;
+    using System.Collections.Generic;
 
     public class Permutation
     {
@@ -23,6 +24,30 @@
             }
         }
 
+        public void PermuteWithRepetition(int index, string[] elements)
+        {
+            if (index >= elements.Length)
+            {
+                Console.WriteLine(string.Join(" ", elements));
+            }
+
+            else
+            {
+                HashSet<string> swapped = new HashSet<string>();
+
+                for (int i = index; i < elements.Length; i++)
+                {
+                    if (!swapped.Contains(elements[i]))
+                    {
+                        Swap(index, i, elements);
+                        PermuteWithRepetition(index + 1, elements);
+                        Swap(index, i, elements);
+                        swapped.Add(elements[i]);
+                    }
+                }
+            }
+        }
+
         private void Swap(int firstIndex, int secondIndex, string[] collection)
         {
             var temp = collection[firstIndex];
@@ -30,14 +55,14 @@
             collection[secondIndex] = temp;
         }
 
-        public long FindPossibleWaysCount(int collectionLength)
+        public long FindPossibleWaysCountWithoutRepetition(int collectionLength)
         {
             if (collectionLength == 0)
             {
                 return 1;
             }
 
-            var result = collectionLength * FindPossibleWaysCount(collectionLength - 1);
+            var result = collectionLength * FindPossibleWaysCountWithoutRepetition(collectionLength - 1);
 
             return result;
         }
