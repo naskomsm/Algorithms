@@ -7,6 +7,7 @@
         public string SortNumbers(List<int> collection)
         {
             int pivot = collection[0];
+
             for (int i = 0; i < collection.Count; i++)
             {
                 int pivotIndex = collection.IndexOf(pivot);
