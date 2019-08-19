@@ -54,8 +54,8 @@
             //long possibleWaysCount = permutation.FindPossibleWaysCountWithoutRepetition(3);
             //Console.WriteLine($"Possible permutations: {possibleWaysCount}");
 
-            Variation variation = new Variation(2);
-            variation.Variate(0, new string[3] { "A", "B", "C" });
+            //Variation variation = new Variation(2);
+            //variation.VariateWithRepetition(0, new string[3] { "A", "B", "C" });
         }
     }
 }

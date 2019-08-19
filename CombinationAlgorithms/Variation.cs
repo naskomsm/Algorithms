@@ -19,7 +19,7 @@
 
         public void Variate(int index, string[] elements)
         {
-            if(index >= arrayLength)
+            if (index >= arrayLength)
             {
                 Console.WriteLine(string.Join(" ", variations));
             }
@@ -35,6 +35,23 @@
                         Variate(index + 1, elements);
                         used[i] = false;
                     }
+                }
+            }
+        }
+
+        public void VariateWithRepetition(int index, string[] elements)
+        {
+            if (index >= arrayLength)
+            {
+                Console.WriteLine(string.Join(" ", variations));
+            }
+
+            else
+            {
+                for (int i = 0; i < elements.Length; i++)
+                {
+                    variations[index] = elements[i];
+                    VariateWithRepetition(index + 1, elements);
                 }
             }
         }
