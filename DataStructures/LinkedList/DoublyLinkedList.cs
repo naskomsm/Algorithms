@@ -23,14 +23,13 @@
 
         public int Count { get; private set; }
 
-
-
         public void AddFirst(int element)
         {
             if (this.Count == 0)
             {
                 this.head = this.tail = new ListNode(element);
             }
+
             else
             {
                 var newHead = new ListNode(element);
@@ -38,10 +37,9 @@
                 this.head.PrevNode = newHead;
                 this.head = newHead;
             }
+
             this.Count++;
         }
-
-
 
         public void AddLast(int element)
         {
@@ -49,6 +47,7 @@
             {
                 this.tail = this.head = new ListNode(element);
             }
+
             else
             {
                 var newTail = new ListNode(element);
@@ -56,10 +55,9 @@
                 this.tail.NextNode = newTail;
                 this.tail = newTail;
             }
+
             this.Count++;
         }
-
-
 
         public int RemoveFirst()
         {
@@ -67,54 +65,57 @@
             {
                 throw new InvalidOperationException("List Empty");
             }
+
             var firstElement = this.head.Value;
             this.head = this.head.NextNode;
+
             if (this.head != null)
             {
                 this.head.PrevNode = null;
             }
+
             else
             {
                 this.tail = null;
             }
+
             this.Count--;
             return firstElement;
         }
 
-
-
-        public int RemoveLast() // i dont understand it ;c
+        public int RemoveLast()
         {
             if (this.Count == 0)
             {
                 throw new InvalidOperationException("List Empty");
             }
+
             var lastElement = this.tail.Value;
             this.tail = this.tail.PrevNode;
+
             if (this.tail != null)
             {
                 this.tail.NextNode = null;
             }
+
             else
             {
-                this.head = null; // this part particularly
+                this.head = null;
             }
+
             this.Count--;
             return lastElement;
         }
 
-
         public void ForEach(Action<int> action)
         {
             var currentNode = this.head;
-            while (currentNode!=null)
+            while (currentNode != null)
             {
                 action(currentNode.Value);
                 currentNode = currentNode.NextNode;
             }
         }
-
-
 
         public int[] ToArray()
         {
@@ -129,8 +130,5 @@
             }
             return array;
         }
-
-
-
     }
 }
