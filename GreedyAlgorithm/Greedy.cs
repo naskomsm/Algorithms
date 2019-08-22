@@ -75,7 +75,7 @@
 
             foreach (var coin in this.coinsCounter)
             {
-                Console.WriteLine($"{coin.Key}, times used: {coin.Value}");
+                Console.WriteLine($"{coin.Key}, used: {coin.Value} times");
             }
 
             Console.WriteLine($"Sum: {sumToAchieve}");
