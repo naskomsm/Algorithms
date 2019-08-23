@@ -65,8 +65,11 @@
             //Greedy greedy = new Greedy(new double[4] { 0.10, 0.02, 0.01, 0.05 }, 0.59);
             //greedy.Calculate();
 
-            BruteForce brute = new BruteForce("hi");
-            brute.Run();
+            //BruteForce brute = new BruteForce("noob123");
+            //brute.Run();
+
+            //ExampleOfGreedy example = new ExampleOfGreedy();
+            //example.Play(10);
         }
     }
 }
