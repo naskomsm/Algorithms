@@ -1,5 +1,6 @@
 ﻿namespace Algorithms_and_data_structure
 {
+    using Algorithms_and_data_structure.BruteForceAlgoritm;
     using Algorithms_and_data_structure.CombinationAlgorithms;
     using Algorithms_and_data_structure.GreedyAlgorithm;
     using Algorithms_and_data_structure.SearchingAlgorithms;
@@ -63,6 +64,9 @@
 
             //Greedy greedy = new Greedy(new double[4] { 0.10, 0.02, 0.01, 0.05 }, 0.59);
             //greedy.Calculate();
+
+            BruteForce brute = new BruteForce("hi");
+            brute.Run();
         }
     }
 }
