@@ -58,6 +58,9 @@
             //Variation variation = new Variation(2);
             //variation.VariateWithRepetition(0, new string[3] { "A", "B", "C" });
 
+            //Combination combination = new Combination(2);
+            //combination.Combine(0, 0, new string[3] { "A", "B", "C" });
+
             //Greedy greedy = new Greedy(new double[4] { 0.10, 0.02, 0.01, 0.05 }, 0.59);
             //greedy.Calculate();
         }

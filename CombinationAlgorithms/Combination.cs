@@ -1,30 +1,29 @@
 ﻿namespace Algorithms_and_data_structure.CombinationAlgorithms
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     public class Combination
     {
-        private int k;
+        private string[] result;
 
-        public Combination(int k)
+        public Combination(int size)
         {
-            this.k = k;
+            this.result = new string[size];
         }
 
-        public void Combine(int index, int start, string[] array)
+        public void Combine(int index, int start, string[] collection)
         {
-            if (index >= k)
+            if (index >= this.result.Length)
             {
-                Console.WriteLine(string.Join(" ", array));
+                Console.WriteLine(string.Join(" ", this.result));
             }
 
             else
             {
-                for (int i = start; i < array.Length; i++)
+                for (int i = start; i < collection.Length; i++)
                 {
-                    //todo
+                    result[index] = collection[i];
+                    Combine(index + 1, i + 1, collection);
                 }
             }
         }
