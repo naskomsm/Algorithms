@@ -4,6 +4,7 @@
     using Algorithms_and_data_structure.CombinationAlgorithms;
     using Algorithms_and_data_structure.GreedyAlgorithm;
     using Algorithms_and_data_structure.SearchingAlgorithms;
+    using Algorithms_and_data_structure.SimpleRecursionProblems;
     using Algorithms_and_data_structure.SortingAlorithms;
     using System;
     using System.Collections.Generic;
@@ -71,21 +72,24 @@
             //ExampleOfGreedy example = new ExampleOfGreedy();
             //example.Play(10);
 
-            Dictionary<int, int> set = new Dictionary<int, int>();
-            set.Add(0, 6);
-            set.Add(3, 5);
-            set.Add(1, 4);
-            set.Add(5, 7);
-            set.Add(3, 8);
-            set.Add(5, 9);
-            set.Add(6, 10);
-            set.Add(8, 11);
-            set.Add(8, 12);
-            set.Add(2, 13);
-            set.Add(12, 14);
+            //Dictionary<int, int> set = new Dictionary<int, int>();
+            //set.Add(0, 6);
+            //set.Add(3, 5);
+            //set.Add(1, 4);
+            //set.Add(5, 7);
+            //set.Add(3, 8);
+            //set.Add(5, 9);
+            //set.Add(6, 10);
+            //set.Add(8, 11);
+            //set.Add(8, 12);
+            //set.Add(2, 13);
+            //set.Add(12, 14);
 
-            ActivitySelectionProblem problem = new ActivitySelectionProblem(set);
-            problem.Run();
+            //ActivitySelectionProblem problem = new ActivitySelectionProblem(set);
+            //problem.Run();
+
+            Fibonacci fibonacci = new Fibonacci();
+            fibonacci.Solve(20);
         }
     }
 }
