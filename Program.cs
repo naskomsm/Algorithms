@@ -1,13 +1,6 @@
 ﻿namespace Algorithms_and_data_structure
 {
-    using Algorithms_and_data_structure.BruteForceAlgoritm;
-    using Algorithms_and_data_structure.CombinationAlgorithms;
-    using Algorithms_and_data_structure.GreedyAlgorithm;
-    using Algorithms_and_data_structure.SearchingAlgorithms;
-    using Algorithms_and_data_structure.SimpleRecursionProblems;
-    using Algorithms_and_data_structure.SortingAlorithms;
-    using System;
-    using System.Collections.Generic;
+    using Algorithms_and_data_structure.DynamicProgramming;
 
     public class Program
     {
@@ -88,8 +81,12 @@
             //ActivitySelectionProblem problem = new ActivitySelectionProblem(set);
             //problem.Run();
 
-            Fibonacci fibonacci = new Fibonacci();
-            fibonacci.Solve(50);
+            //Fibonacci fibonacci = new Fibonacci();
+            //fibonacci.Solve(50);
+
+            LongestIncreasingSubsequence lis = new LongestIncreasingSubsequence();
+            //lis.Solve(new int[16] { 0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15 });
+            lis.Solve(new int[5] { 3, 10, 2, 1, 20 });
         }
     }
 }

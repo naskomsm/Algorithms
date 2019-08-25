@@ -1,4 +1,4 @@
-﻿namespace Algorithms_and_data_structure.SimpleRecursionProblems
+﻿namespace Algorithms_and_data_structure.DynamicProgramming
 {
     using System;
     using System.Collections.Generic;
