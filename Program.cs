@@ -89,7 +89,7 @@
             //problem.Run();
 
             Fibonacci fibonacci = new Fibonacci();
-            fibonacci.Solve(20);
+            fibonacci.Solve(50);
         }
     }
 }

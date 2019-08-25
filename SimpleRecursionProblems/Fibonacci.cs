@@ -5,9 +5,9 @@
 
     public class Fibonacci
     {
-        public void Solve(int fibonaccyUpperGap)
+        public void Solve(long fibonaccyUpperGap)
         {
-            List<int> result = new List<int>();
+            List<long> result = new List<long>();
 
             for (int i = 0; i < fibonaccyUpperGap; i++)
             {
@@ -18,7 +18,7 @@
 
                 else
                 {
-                    int number = result[i - 1] + result[i - 2];
+                    long number = result[i - 1] + result[i - 2];
                     result.Add(number);
                 }
             }
