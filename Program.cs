@@ -85,8 +85,7 @@
             //fibonacci.Solve(50);
 
             LongestIncreasingSubsequence lis = new LongestIncreasingSubsequence();
-            //lis.Solve(new int[16] { 0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15 });
-            lis.Solve(new int[5] { 3, 10, 2, 1, 20 });
+            lis.Solve(new int[5] { 3, 5, 8, 6, 7 });
         }
     }
 }

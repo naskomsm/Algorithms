@@ -16,20 +16,14 @@ namespace Demo
         }
 
         public object[] Arr
-        {
-            get { return this.GetOnlyRealElements(); }
-        }
-
-        // indexer
+             => this.GetOnlyRealElements(); 
+        
 
         public int Count { get; private set; }
 
         public int Capacity
         {
-            get
-            {
-                return capacity;
-            }
+            get => this.capacity;
             private set
             {
                 this.capacity = value;
@@ -42,15 +36,15 @@ namespace Demo
             {
                 throw new InvalidOperationException("Index out of range");
             }
+
             object obj = this.arr[index];
             this.arr[index] = null;
-
-            // 1 2 3 null 5 6 null null null . . . . . . .
 
             for (int i = index; i < this.Count - 1; i++)
             {
                 this.arr[i] = this.arr[i + 1];
             }
+
             this.Count--;
             this.arr[Count] = null;
             
@@ -63,6 +57,7 @@ namespace Demo
             {
                 this.Resize();
             }
+
             this.arr[Count] = element;
             this.Count++;
         }
@@ -76,6 +71,7 @@ namespace Demo
             {
                 temp[i] = this.arr[i];
             }
+
             this.arr = temp;
         }
 
@@ -87,6 +83,7 @@ namespace Demo
             {
                 temp[i] = arr[i]; 
             }
+
             return temp;
         }
 
