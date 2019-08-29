@@ -84,8 +84,24 @@
             //Fibonacci fibonacci = new Fibonacci();
             //fibonacci.Solve(50);
 
-            LongestIncreasingSubsequence lis = new LongestIncreasingSubsequence();
-            lis.Solve(new int[5] { 3, 5, 8, 6, 7 });
+            //LongestIncreasingSubsequence lis = new LongestIncreasingSubsequence();
+            //lis.Solve(new int[5] { 3, 5, 8, 6, 7 });
+
+            int[,] matrix = new int[3, 3];
+
+            matrix[0, 0] = 2;
+
+            matrix[0, 1] = 6;
+            matrix[0, 2] = 4;
+            matrix[1, 0] = 1;
+            matrix[1, 1] = 8;
+            matrix[1, 2] = 9;
+            matrix[2, 0] = 7;
+            matrix[2, 1] = 2;
+            matrix[2, 2] = 3;
+
+            MoveDownAndRightSumProblem problem = new MoveDownAndRightSumProblem(3, 3, matrix);
+            problem.Solve();
         }
     }
 }
