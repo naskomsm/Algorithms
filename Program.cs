@@ -1,6 +1,7 @@
 ﻿namespace Algorithms_and_data_structure
 {
     using Algorithms_and_data_structure.DynamicProgramming;
+    using System;
 
     public class Program
     {
@@ -87,21 +88,45 @@
             //LongestIncreasingSubsequence lis = new LongestIncreasingSubsequence();
             //lis.Solve(new int[5] { 3, 5, 8, 6, 7 });
 
-            int[,] matrix = new int[3, 3];
+            //int[,] matrix = new int[4, 4];
 
-            matrix[0, 0] = 2;
+            //matrix[0, 0] = 1;
+            //matrix[0, 1] = 3;
+            //matrix[0, 2] = 2;
+            //matrix[0, 3] = 1;
 
-            matrix[0, 1] = 6;
-            matrix[0, 2] = 4;
-            matrix[1, 0] = 1;
-            matrix[1, 1] = 8;
-            matrix[1, 2] = 9;
-            matrix[2, 0] = 7;
-            matrix[2, 1] = 2;
-            matrix[2, 2] = 3;
+            //matrix[1, 0] = 5;
+            //matrix[1, 1] = 3;
+            //matrix[1, 2] = 2;
+            //matrix[1, 3] = 1;
 
-            MoveDownAndRightSumProblem problem = new MoveDownAndRightSumProblem(3, 3, matrix);
-            problem.Solve();
+            //matrix[2, 0] = 1;
+            //matrix[2, 1] = 7;
+            //matrix[2, 2] = 3;
+            //matrix[2, 3] = 1;
+
+            //matrix[3, 0] = 1;
+            //matrix[3, 1] = 3;
+            //matrix[3, 2] = 1;
+            //matrix[3, 3] = 1;
+
+
+            //MoveDownAndRightSumProblem problem = new MoveDownAndRightSumProblem(4, 4, matrix);
+            //problem.Solve();
+
+            //int[] price = new int[8];
+
+            //price[0] = 1;
+            //price[1] = 5;
+            //price[2] = 8;
+            //price[3] = 9;
+            //price[4] = 10;
+            //price[5] = 17;
+            //price[6] = 17;
+            //price[7] = 20;
+
+            //RodCuttingProblem problem = new RodCuttingProblem(price);
+            //Console.WriteLine(problem.CutRod(8));
         }
     }
 }
