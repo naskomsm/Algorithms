@@ -1,6 +1,7 @@
 ﻿namespace Algorithms_and_data_structure
 {
     using Algorithms_and_data_structure.DynamicProgramming;
+    using Algorithms_and_data_structure.DynamicProgramming.TheKnapsack;
     using System;
 
     public class Program
@@ -127,6 +128,9 @@
 
             //RodCuttingProblem problem = new RodCuttingProblem(price);
             //Console.WriteLine(problem.CutRod(8));
+
+            TheKnapsackProblem problem = new TheKnapsackProblem(4);
+            problem.Solve();
         }
     }
 }
