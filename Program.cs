@@ -1,4 +1,7 @@
-﻿namespace Algorithms_and_data_structure
+﻿using Algorithms_and_data_structure.DynamicProgramming;
+using System;
+
+namespace Algorithms_and_data_structure
 {
     public class Program
     {
@@ -126,6 +129,11 @@
 
             //TheKnapsackProblem problem = new TheKnapsackProblem(4);
             //problem.Solve();
+
+            var numbers = new int[] { 3, 5, 1, 4, 2 };
+            SubsetSum problem = new SubsetSum(numbers);
+            problem.CalculateSums();
+            problem.CalculateSumWithTarget(14);
         }
     }
 }
