@@ -130,10 +130,9 @@ namespace Algorithms_and_data_structure
             //TheKnapsackProblem problem = new TheKnapsackProblem(4);
             //problem.Solve();
 
-            var numbers = new int[] { 3, 5, 1, 4, 2 };
-            SubsetSum problem = new SubsetSum(numbers);
-            problem.CalculateSums();
-            problem.CalculateSumWithTarget(14);
+            var numbers = new int[] { 3, 5 };
+            SubsetSum problem = new SubsetSum();
+            problem.CalculateSumsWithRepetition(numbers, 5);
         }
     }
 }
