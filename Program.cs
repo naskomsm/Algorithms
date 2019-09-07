@@ -145,38 +145,44 @@ namespace Algorithms_and_data_structure
             // Representing graph with Adjacency List
             var graph = new List<int>[]
             {
-                new List<int>() { 1 , 4 , 2 , 3 },
-                new List<int>() { 0 },
-                new List<int>() { 0 , 3 },
-                new List<int>() { 0 , 2, 4 },
-                new List<int>() { 0 , 3 },
+                new List<int>(),
+                new List<int>() { 2 , 6 },
+                new List<int>() { 1 },
+                new List<int>() { 4 },
+                new List<int>() { 3 },
+                new List<int>(),
+                new List<int>() { 1 },
+                new List<int>(),
             };
+
+            DephFirstSearch dfs = new DephFirstSearch(graph);
+            dfs.PrintAllChildNodes();
 
             // Representing graph with Adjacency Matrix
-            var otherGraph = new int[,]
-            {
-                { 0 , 1 , 1 , 1 , 1 },
-                { 1 , 0 , 0 , 0 , 0 },
-                { 1 , 0 , 0 , 1 , 0 },
-                { 1 , 0 , 1 , 0 , 1 },
-                { 1 , 0 , 0 , 1 , 0 },
-            };
+            //var otherGraph = new int[,]
+            //{
+            //    { 0 , 1 , 1 , 1 , 1 },
+            //    { 1 , 0 , 0 , 0 , 0 },
+            //    { 1 , 0 , 0 , 1 , 0 },
+            //    { 1 , 0 , 1 , 0 , 1 },
+            //    { 1 , 0 , 0 , 1 , 0 },
+            //};
 
             // Representing graph with List of Edges
-            var anotherGraph = new List<Edge>()
-            {
-                new Edge(0,1),
-                new Edge(0,2),
-                new Edge(0,3),
-                new Edge(0,4),
-                new Edge(1,0),
-                new Edge(2,0),
-                new Edge(2,2),
-                new Edge(3,0),
-                new Edge(3,4),
-                new Edge(4,0),
-                new Edge(4,3),
-            };
+            //var anotherGraph = new List<Edge>()
+            //{
+            //    new Edge(0,1),
+            //    new Edge(0,2),
+            //    new Edge(0,3),
+            //    new Edge(0,4),
+            //    new Edge(1,0),
+            //    new Edge(2,0),
+            //    new Edge(2,2),
+            //    new Edge(3,0),
+            //    new Edge(3,4),
+            //    new Edge(4,0),
+            //    new Edge(4,3),
+            //};
         }
     }
 }
