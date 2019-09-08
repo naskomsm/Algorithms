@@ -145,18 +145,22 @@ namespace Algorithms_and_data_structure
             // Representing graph with Adjacency List
             var graph = new List<int>[]
             {
-                new List<int>(),
-                new List<int>() { 2 , 6 },
-                new List<int>() { 1 },
-                new List<int>() { 4 },
+                new List<int>() { 1 , 2 , 3 , 5 },
+                new List<int>() { 2 , 4 , 5 , 6 },
                 new List<int>() { 3 },
-                new List<int>(),
+                new List<int>() { 7 , 8 },
                 new List<int>() { 1 },
+                new List<int>(),
+                new List<int>() { 2 },
+                new List<int>() { 2 },
                 new List<int>(),
             };
 
             DephFirstSearch dfs = new DephFirstSearch(graph);
             dfs.PrintAllChildNodes();
+
+            BradthFirstSearch bfs = new BradthFirstSearch(graph);
+            bfs.BFS(0);
 
             // Representing graph with Adjacency Matrix
             //var otherGraph = new int[,]
