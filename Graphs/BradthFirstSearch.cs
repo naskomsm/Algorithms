@@ -18,11 +18,6 @@
             this.queue = new Queue<int>();
         }
 
-        public void PrintAllChildNodes()
-        {
-            
-        }
-
         public void BFS(int node)
         {
             this.queue.Enqueue(node);
@@ -31,7 +26,7 @@
             while (queue.Any())
             {
                 var nodeToPrint = queue.Dequeue();
-                Console.WriteLine(nodeToPrint);
+                Console.Write(nodeToPrint + " ");
 
                 foreach (var child in this.graph[nodeToPrint])
                 {
