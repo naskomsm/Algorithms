@@ -1,8 +1,5 @@
-﻿using Algorithms_and_data_structure.DynamicProgramming;
-using Algorithms_and_data_structure.Graphs;
-using System;
+﻿using Algorithms_and_data_structure.Graphs;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Algorithms_and_data_structure
 {
@@ -145,22 +142,19 @@ namespace Algorithms_and_data_structure
             // Representing graph with Adjacency List
             var graph = new List<int>[]
             {
-                new List<int>() { 1 , 2 , 3 , 5 },
-                new List<int>() { 2 , 4 , 5 , 6 },
+                new List<int>() { 1, 2 },
+                new List<int>() { 3, 4 },
+                new List<int>() { 5 },
+                new List<int>() { 2, 5 },
                 new List<int>() { 3 },
-                new List<int>() { 7 , 8 },
-                new List<int>() { 1 },
-                new List<int>(),
-                new List<int>() { 2 },
-                new List<int>() { 2 },
                 new List<int>(),
             };
 
-            DephFirstSearch dfs = new DephFirstSearch(graph);
-            dfs.PrintAllChildNodes();
+            //DephFirstSearch dfs = new DephFirstSearch(graph);
+            //dfs.PrintAllChildNodes();
 
-            BradthFirstSearch bfs = new BradthFirstSearch(graph);
-            bfs.BFS(0);
+            //BradthFirstSearch bfs = new BradthFirstSearch(graph);
+            //bfs.BFS(0);
 
             // Representing graph with Adjacency Matrix
             //var otherGraph = new int[,]
@@ -187,6 +181,10 @@ namespace Algorithms_and_data_structure
             //    new Edge(4,0),
             //    new Edge(4,3),
             //};
+
+
+            SourceRemovalAlgorithm sra = new SourceRemovalAlgorithm();
+            sra.Order(graph);
         }
     }
 }
