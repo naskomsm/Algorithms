@@ -9,10 +9,10 @@
             this.Price = price;
         }
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
-        public int Weight { get; set; }
+        public int Weight { get; private set; }
 
-        public int Price { get; set; }
+        public int Price { get; private set; }
     }
 }

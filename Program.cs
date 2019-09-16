@@ -1,4 +1,5 @@
-﻿using Algorithms_and_data_structure.Graphs;
+﻿using Algorithms_and_data_structure.CombinationAlgorithms;
+using Algorithms_and_data_structure.Graphs;
 using System.Collections.Generic;
 
 namespace Algorithms_and_data_structure
@@ -48,13 +49,14 @@ namespace Algorithms_and_data_structure
 
             //Permutation permutation = new Permutation();
             //permutation.Permute(0, new string[3] { "A", "B", "C" });
+
             //long possibleWaysCount = permutation.FindPossibleWaysCountWithoutRepetition(3);
             //Console.WriteLine($"Possible permutations: {possibleWaysCount}");
 
             //Variation variation = new Variation(2);
             //variation.VariateWithRepetition(0, new string[3] { "A", "B", "C" });
 
-            //Combination combination = new Combination(2);
+            Combination combination = new Combination(2);
             //combination.Combine(0, 0, new string[3] { "A", "B", "C" });
 
             //Greedy greedy = new Greedy(new double[4] { 0.10, 0.02, 0.01, 0.05 }, 0.59);
@@ -140,15 +142,15 @@ namespace Algorithms_and_data_structure
             //lcs.Solve(first, second);
 
             // Representing graph with Adjacency List
-            var graph = new List<int>[]
-            {
-                new List<int>() { 1, 2 },
-                new List<int>() { 3, 4 },
-                new List<int>() { 5 },
-                new List<int>() { 2, 5 },
-                new List<int>() { 3 },
-                new List<int>(),
-            };
+            //var graph = new List<int>[]
+            //{
+            //    new List<int>() { 1, 2 },
+            //    new List<int>() { 3, 4 },
+            //    new List<int>() { 5 },
+            //    new List<int>() { 2, 5 },
+            //    new List<int>() { 3 },
+            //    new List<int>(),
+            //};
 
             //DephFirstSearch dfs = new DephFirstSearch(graph);
             //dfs.PrintAllChildNodes();
@@ -182,9 +184,8 @@ namespace Algorithms_and_data_structure
             //    new Edge(4,3),
             //};
 
-
-            SourceRemovalAlgorithm sra = new SourceRemovalAlgorithm();
-            sra.Order(graph);
+            //SourceRemovalAlgorithm sra = new SourceRemovalAlgorithm();
+            //sra.Order(graph);
         }
     }
 }
